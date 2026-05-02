@@ -1,6 +1,5 @@
 print("=== WELCOME TO YOUR PROFILE SYSTEM ===")
 name = input("What is your name? ")
-full_name = input("What is your full names? ")
 age = int(input("How old are you? " ))
 home = input("Where are you from? ")
 subject = input("What is your favorite subject? ")
@@ -10,13 +9,29 @@ hobby1 = input("What is your first hobby? ")
 hobby2 = input("Enter is your second hobby? ")
 
 user_details = {"Name": name, "Age": age, "Home": home, "Subject": subject}
-extra_details = [hobby1, hobby2, code]
-sens_details = (full_name, id)
 
-if age >= 18:
-    print("User is an adult")
+ans = True if code == "yes" else False
+extra_details = [hobby1, hobby2, ans]
+
+sens_details = (id)
+
+ageStatus = age >= 18
+
+print("\n===== USER PROFILE =====")
+print(f"Name: {name}")
+print(f"Age: {age}")
+
+if ageStatus is True:
+    print("Status: Adult")
 else:
-    print("User is a minor")
+    print("Status: Minor")
     
-answer = (code == "yes")
-extra_details.append(answer[2])
+print(f"Hometown: {home}")
+print(f"Favorite Subject: {subject}")
+print(f"Student ID: {id}")
+
+print("\n Hobbies: ")
+for hobby in extra_details[:-1]:
+    print(f"- {hobby}")
+    
+print(f"\nLike Coding {extra_details[2]}")
