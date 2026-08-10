@@ -1,0 +1,51 @@
+print("===== STUDENT TRACKER =====")
+names = input("Enter your full name: ")
+student_no = int(input("Enter student number: "))
+age = int(input("Enter your age: "))
+course = input("Enter the course you are enrolled in: ")
+year = int(input("Enter your year of study: "))
+location = input("Ener your location: ")
+attended = int(input("Enter the number of lectured you attended today: "))
+missed = int(input("Enter the number of lectures you missed today: "))
+hours = int(input("Enter hours of study for the day: "))
+ass = input("Did you complete your assignment? (Yes/No): ").upper()
+productivity = input("Did you feel productive today? (Yes/No): ").upper()
+
+#Storing student profile in a dictionary
+Profile = {"Name": names, "Age": age, "Course": course, "Year": year, "Location": location}
+
+#Storing student daily activities
+ativities = [attended, hours, ass, productivity]
+
+#Storing identity
+identity = (student_no, course)
+
+#Attendance checking
+attendance = attended > missed
+    
+#Study performance checking
+performance = hours >= 4
+
+#Productivity Checking
+Assignments = True if ass == "yes" else False  #Converting boolean
+productive = True if productivity == "yes" else False
+    
+#Profile Display
+print("\n=== PROFILE ===")
+print(f"Names: {names}")
+print(f"Course: {course}")
+print(f"Year: {year}")
+
+if performance == True:
+    print("Strong study effort")
+else:
+    print("Needs improvement")
+    
+if attendance == True:
+    print("Good attendance day")
+else:
+    print("Poor attendance day")
+
+print(f"Assignments completed: {Assignments}")
+print(f"Was productive: {productive}")
+
