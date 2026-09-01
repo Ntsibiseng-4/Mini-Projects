@@ -33,3 +33,31 @@ print("=" * 40)
 profile_summary = f'{fixed_name} ({age}) |{username}|{email}| Valid: {is_valid_email}'
 print(profile_summary)
 print("=" * 40)
+
+# SECTION 4: NUMBER CRUNCHING
+height_m = weight_cm / 100
+
+bmi = weight_cm / (height_m ** 2)
+round(bmi, 1)
+
+base_fee = 50
+student_discount = 10
+
+membership_fee = base_fee - student_discount
+
+loyalt_point = 100
+loyalt_point += 20
+
+bouns = 2 ** 3
+loyalt_point += bouns
+
+reward_tiers = loyalt_point // 50
+
+print("\n" + "=" * 40)
+print("BML:", bmi)
+print("Membership Fee", membership_fee)
+print("Loyalty Points:", loyalt_point)
+print("Reward Tiers:", reward_tiers)
+print("\n" + "=" * 40)
+
+# SECTION 5: CONDITIONAL LOGIC
