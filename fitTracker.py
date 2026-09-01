@@ -3,7 +3,7 @@ full_name = "Jane DOE"
 age = 25
 email = "jane.doe@gmail.com"
 height_cm = 165.0
-weight_cm = 60.0
+weight_kg = 60.0
 is_student = True
 
 print("=" * 40)
@@ -11,22 +11,22 @@ print("Name:", full_name)
 print("Age:", age)
 print("Email:", email)
 print("Height:", height_cm)
-print("Weight:", weight_cm)
+print("Weight:", weight_kg)
 print("Student:", is_student)
 print("=" * 40)
 
 # SECTION 2: DATA TYPE VALIDATION
 print("=" * 40)
 print("Age is an int:", isinstance(age, int))
-print("Height is an float:", isinstance(age, float))
-print("Weight is an float:", isinstance(age, float))
-print("Student is an boolean:", isinstance(age, bool))
+print("Height is an float:", isinstance(height_cm, float))
+print("Weight is an float:", isinstance(weight_kg, float))
+print("Student is an boolean:", isinstance(is_student, bool))
 print("What type is the email:", type(email))
 print("=" * 40)
 
 # SECTION 3: STRING PROCESSING
-fixed_name = full_name.strip() and full_name.title()
-username = full_name[0:3] + str(age)
+fixed_name = full_name.strip().title()
+username = full_name[0:3].lower() + str(age)
 is_valid_email = "@" in email and "." in email
 
 print("=" * 40)
@@ -37,7 +37,7 @@ print("=" * 40)
 # SECTION 4: NUMBER CRUNCHING
 height_m = height_cm / 100
 
-bmi = weight_cm / (height_m ** 2)
+bmi = weight_kg / (height_m ** 2)
 rbmi = round(bmi, 1)
 
 base_fee = 50
@@ -65,9 +65,9 @@ print("\n" + "=" * 40)
 #BMI Catetory
 if rbmi < 18.5:
     weight = "Underweight"
-elif rbmi >= 18.5 or rbmi <= 24.5:
+elif rbmi >= 18.5 and rbmi <= 24.5:
     weight = "Normal Weight"
-elif rbmi >= 25 or rbmi <= 29.9:
+elif rbmi >= 25 and rbmi <= 29.9:
     weight = "Overweight"
 else:
     weight = "Obese"
