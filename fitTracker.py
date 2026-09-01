@@ -35,10 +35,10 @@ print(profile_summary)
 print("=" * 40)
 
 # SECTION 4: NUMBER CRUNCHING
-height_m = weight_cm / 100
+height_m = height_cm / 100
 
 bmi = weight_cm / (height_m ** 2)
-round(bmi, 1)
+rbmi = round(bmi, 1)
 
 base_fee = 50
 student_discount = 10
@@ -61,3 +61,34 @@ print("Reward Tiers:", reward_tiers)
 print("\n" + "=" * 40)
 
 # SECTION 5: CONDITIONAL LOGIC
+
+#BMI Catetory
+if rbmi < 18.5:
+    weight = "Underweight"
+elif rbmi >= 18.5 or rbmi <= 24.5:
+    weight = "Normal Weight"
+elif rbmi >= 25 or rbmi <= 29.9:
+    weight = "Overweight"
+else:
+    weight = "Obese"
+    
+#Membership Categoty
+if age < 18:
+    member = "Junior Member"
+elif age >= 65:
+    member = "Senior Member"
+elif is_student == True and age >= 18:
+    member = "Student Member"
+else:
+    member = "Standard Member"
+
+
+#Membership Tier category
+is_eligible = not((not is_valid_email) or (age  < 13))  # expressing it as "IS eligible" instead of "is NOT eligible,"
+
+print("\n" + "=" * 40)
+print("Username:", username)
+print(f'BMI: {rbmi} ({weight})')
+print("Tier:", member)
+print(f'Loyalty pts: {loyalt_point} ({reward_tiers} reward tiers)')
+print("Eligible:", is_eligible)
